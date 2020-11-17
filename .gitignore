@@ -1,0 +1,7 @@
+target/
+.project
+.settings/
+pom.xml
+.classpath
+AppTest.java
+
