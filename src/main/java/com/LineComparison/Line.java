@@ -1,6 +1,6 @@
 package com.LineComparison;
 
-public class Line {
+public class Line implements Comparable<Line> {
 
 	// DECLARATION OF LINE CO-ORDINATE
 	int cordX1;
@@ -25,11 +25,8 @@ public class Line {
 		return lengthOfLine;
 	}
 
-	// OVERRIDE THE OBJECT CLASS equals() METHOD
-	@Override
-	public boolean equals(Object obj) {
-
-		Line obj1 = (Line) obj;
+	// OVERRIDE compareTo() METHOD
+	public int compareTo(Line obj1) {
 
 		// CALL computeLengthOfLine() METHOD TO FIND THE LENGTH OF LINE 1
 		double lengthOfLine1 = computeLengthOfLine(this.cordX1, this.cordX2, this.cordY1, this.cordY2);
@@ -37,12 +34,12 @@ public class Line {
 		double lengthOfLine2 = computeLengthOfLine(obj1.cordX1, obj1.cordX2, obj1.cordY1, obj1.cordY2);
 
 		if (lengthOfLine1 == lengthOfLine2) {
-			return true;
-
+			return 0;
+		} else if (lengthOfLine1 < lengthOfLine2) {
+			return -1;
 		} else {
-			return false;
+			return 1;
 		}
-
 	}
 
 }
