@@ -1,26 +1,25 @@
 package com.LineComparison;
 
 public class LineComparison {
+
 	// MAIN METHOD
 	public static void main(String[] args) {
 
-		// DECLARATION OF CO-ORDINATE POINTS FOR LINE
-		int x1, x2, y1, y2;
-		double lengthOfLine;
-		// ASSIGNING DEFAULT VALUES;
-		x1 = 1;
-		y1 = 1;
-		x2 = 4;
-		y2 = 4;
+		// HERE DEFAULT CONSTRUCTOR TO BE CALLED PARAMETER AS (cordX1, cordX2, cordY1, cordY2)
+		Line line1 = new Line(1, 4, 1, 4);
+		Line line2 = new Line(1, 4, 1, 4);
 
 		// DISPLAYING THE MESSAGE
 		System.out.println("           Welcome to Line Comparison Computation Program          ");
 		System.out.println("-------------------------------------------------------------------");
 
-		// FINDING THE LENGTH OF LINE AND ASSIGN IN VARIABLE OF DOUBLE TYPE
-		lengthOfLine = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
-		// DISPLAY THE LENGTH OF LINE
-		System.out.println(" Length of Line is= " + lengthOfLine);
+		// LINES COMPARISION BY equals() METHOD
+		if (line1.equals(line2)) {
+			System.out.println("Lines are equal");
+
+		} else {
+			System.out.println("Lines are not equal");
+		}
 
 	}
 }
